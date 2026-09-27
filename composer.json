@@ -1,0 +1,47 @@
+{
+    "name": "silveridc/cms",
+    "description": "A free content management system based on ThinkPHP8",
+    "type": "project",
+    "keywords": [
+        "CMS",
+        "CMF",
+        "ThinkPHP"
+    ],
+    "homepage": "https://www.silveridc.cn",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "zhaoyj",
+            "email": "admin@silveridc.cn"
+        }
+    ],
+    "require": {
+        "php": ">=8.0.0",
+        "topthink/framework": "^8.0",
+        "topthink/think-orm": "^3.0|^4.0",
+        "topthink/think-filesystem": "^2.0|^3.0",
+        "topthink/think-multi-app": "^1.1",
+        "topthink/think-captcha": "^3.0"
+    },
+    "require-dev": {
+        "topthink/think-dumper": "^1.0",
+        "topthink/think-trace": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\": "app"
+        },
+        "psr-0": {
+            "": "extend/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@php think service:discover",
+            "@php think vendor:publish"
+        ]
+    }
+}
